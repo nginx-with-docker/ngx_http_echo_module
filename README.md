@@ -19,8 +19,8 @@ An Nginx module for bringing the power of "echo", "sleep", "time" and more to Ng
             <td>1.21.0</td>
             <td>0.62</td>
             <td><ul>
-                <li>docker pull soulteary/prebuilt-nginx-modules:echo-1.21.0</li>
-                <li>docker pull soulteary/prebuilt-nginx-modules:echo-1.21.0-alpine</li>
+                <li>docker pull soulteary/prebuilt-nginx-modules:ngx-1.21.0-echo-0.62</li>
+                <li>docker pull soulteary/prebuilt-nginx-modules:ngx-1.21.0-echo-0.62-alpine</li>
             </ul></td>
         </tr>
         <tr>
