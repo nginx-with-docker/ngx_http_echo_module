@@ -16,6 +16,13 @@ An Nginx module for bringing the power of "echo", "sleep", "time" and more to Ng
     </thead>
     <tbody>
         <tr>
+            <td>1.21.1</td>
+            <td>0.62</td>
+            <td><ul>
+                <li>docker pull soulteary/prebuilt-nginx-modules:ngx-1.21.1-echo-0.62</li>
+            </ul></td>
+        </tr>
+        <tr>
             <td>1.21.0</td>
             <td>0.62</td>
             <td><ul>
