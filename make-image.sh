@@ -1,15 +1,16 @@
 #!/bin/bash
 
-REPO_NAME="soulteary/prebuilt-nginx-modules"
-tag="echo";
-
 set -a
     . "docker/.env"
 set +a
 
+REPO_NAME="soulteary/prebuilt-nginx-modules"
+
+REPO_TAG="ngx-$NGINX_VERSION-echo-$MODULE_VERSION";
+
 
 if [ -f "docker/Dockerfile.alpine" ]; then
-    BUILD_NAME="$REPO_NAME:$tag-$NGINX_VERSION-alpine"
+    BUILD_NAME="$REPO_NAME:$REPO_TAG-alpine"
     if [[ "$(docker images -q $BUILD_NAME 2> /dev/null)" == "" ]]; then
         echo "Build: $BUILD_NAME";
         BUILD_ARGS=$(tr '\n' ';' < "docker/.env" | sed 's/;$/\n/' | sed 's/^/ --build-arg /' | sed 's/;/ --build-arg /g')
@@ -18,7 +19,7 @@ if [ -f "docker/Dockerfile.alpine" ]; then
 fi
 
 if [ -f "docker/Dockerfile.debian" ]; then
-    BUILD_NAME="$REPO_NAME:$tag-$NGINX_VERSION"
+    BUILD_NAME="$REPO_NAME:$REPO_TAG"
     if [[ "$(docker images -q $BUILD_NAME 2> /dev/null)" == "" ]]; then
         echo "Build: $BUILD_NAME";
         BUILD_ARGS=$(tr '\n' ';' < "docker/.env" | sed 's/;$/\n/' | sed 's/^/ --build-arg /' | sed 's/;/ --build-arg /g')
